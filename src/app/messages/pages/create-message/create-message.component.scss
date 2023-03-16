@@ -1,0 +1,30 @@
+.create-message-page {
+  padding: 5vw;
+  width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.create-message {
+  color: var(--yellow);
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 5px;
+}
+
+.share-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 730px) {
+  .create-message-page {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 310px) {
+  .create-message-page {
+    width: 90vw;
+  }
+}

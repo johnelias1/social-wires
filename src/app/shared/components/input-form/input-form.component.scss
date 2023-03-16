@@ -1,0 +1,40 @@
+.input-container {
+  width: 100%;
+}
+
+.input-container label {
+  color: var(--yellow);
+  font-size: 14px;
+}
+
+.input{
+  display: block;
+  background-color: var(--maincolor);
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  color: white;
+  width: calc(100% - 25px);
+  margin-bottom: 10px;
+  margin-top: 3px;
+}
+
+.input::placeholder{
+  color: #9c9898;
+  font-size: 0.8rem;
+}
+
+.input:focus{
+  outline: 0;
+  border: 1px solid darkgray;
+}
+
+.invalid{
+  border: 1px solid var(--danger) !important;
+}
+
+.invalid-feed{
+  color: var(--danger);
+  text-align: center;
+}

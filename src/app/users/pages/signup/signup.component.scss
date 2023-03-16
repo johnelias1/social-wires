@@ -1,0 +1,91 @@
+.signup-page {
+  display: flex;
+  justify-content: center;
+}
+
+.page-container {
+  width: 30vw;
+}
+
+.signup-error {
+  color: red;
+  text-align: center;
+}
+
+.wires-logo-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+}
+
+.wires-logo {
+  width: 25vw;
+}
+
+.wires-title {
+  position: absolute;
+  top: 25%;
+  font-size: 5em;
+}
+
+.welcome-text {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.signin-button-container {
+  margin-bottom: 30px;
+}
+
+.signup-button-container {
+  margin-top: 40px;
+}
+
+.footer {
+  text-align: center;
+  width: 100%;
+  font-size: 12px;
+  line-height: 5px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+@media (max-width: 1180px) {
+    .wires-title {
+    top: 15%;
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 1180px) {
+  .page-container {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .page-container {
+    width: 90vw;
+  }
+
+  .wires-logo {
+    width: 100vw;
+  }
+
+  .wires-title {
+    top: 20%;
+    font-size: 4em;
+  }
+
+  .welcome-text {
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2px;
+    margin-bottom: 30px;
+  }
+}

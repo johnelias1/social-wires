@@ -1,0 +1,36 @@
+<div class="input-container" *ngIf="type !== 'select'">
+  <label *ngIf="label != null" [for]="id">{{ label }}</label>
+  <input
+    *ngIf="type !== 'textarea'"
+    class="input text-center"
+    [required]="required"
+    [minlength]="minlength"
+    [name]="name"
+    [autocomplete]="autocomplete ? name : 'off'"
+    [value]="value"
+    [disabled]="isDisabled"
+    [(ngModel)]="value"
+    [ngModelOptions]="{ standalone: true }"
+    [type]="type"
+    [id]="id || name"
+    (input)="onInput($event.target?.eventListeners?.toString() || '')"
+    (change)="onChangeInput($event.target?.eventListeners?.toString() || '')"
+    [placeholder]="placeholder"
+  />
+
+  <textarea
+    *ngIf="type === 'textarea'"
+    class="input text-center"
+    [required]="required"
+    rows="4"
+    [minlength]="minlength"
+    [name]="name"
+    [value]="value"
+    [disabled]="isDisabled"
+    [(ngModel)]="value"
+    [ngModelOptions]="{ standalone: true }"
+    [id]="id || name"
+    (input)="onInput($event.target?.eventListeners?.toString() || '')"
+    [placeholder]="placeholder"
+  ></textarea>
+</div>

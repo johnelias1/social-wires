@@ -1,0 +1,65 @@
+<section class="signup-page">
+  <div class="page-container">
+    <figure class="wires-logo-container">
+      <img
+        src="/assets/img/wires_logo.png"
+        class="wires-logo"
+        alt="Wires Logo"
+      />
+      <h1 class="wires-title text-yellow">Wires</h1>
+    </figure>
+    <h2 class="welcome-text">Welcome To Wires</h2>
+    <section class="signin-button-container">
+      <app-button textColor="var(--yellow)" routerLink="/users/auth/signup">
+        Sign Up
+      </app-button>
+    </section>
+    <section>
+      <p class="signin-error" *ngIf="error != null">{{ error }}</p>
+      <section id="signin">
+        <form
+          class="signinForm"
+          [formGroup]="form"
+          (ngSubmit)="signin(form)"
+          novalidate
+        >
+        <div class="input-container">
+          <label for="">username</label>
+          <input
+            type="text"
+            formControlName="username"
+            placeholder="username"
+            class="input text-center"
+          />
+        </div>
+
+          <div class="input-container">
+            <label for="">Name</label>
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+              class="input text-center"
+            />
+          </div>
+
+          <section class="signup-button-container">
+            <app-button
+              type="submit"
+              backgroundColor="white"
+              textColor="var(--maincolor)"
+              >Sign In</app-button
+            >
+          </section>
+        </form>
+      </section>
+    </section>
+  </div>
+</section>
+<footer class="footer">
+  <p><span style="color: white">2022</span> All Rigths Reserved. WIRES</p>
+  <p>
+    <span class="text-yellow">Privacy Policy</span> |
+    <span class="text-yellow">Terms & Conditions</span>
+  </p>
+</footer>

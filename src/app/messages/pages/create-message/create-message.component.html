@@ -1,0 +1,44 @@
+<section class="create-message-page">
+  <h1 class="create-message">Create message</h1>
+  <form
+    class="createMessageForm"
+    [formGroup]="form"
+    (ngSubmit)="create(form)"
+    novalidate
+  >
+    <div class="input-container">
+      <label for="">Title messages</label>
+      <input
+        type="text"
+        formControlName="title"
+        placeholder="Talk about me"
+        class="input text-center"
+      />
+    </div>
+
+    <div class="input-container">
+      <label for="">Messages</label>
+      <input
+        type="textarea"
+        formControlName="text"
+        placeholder="Create message for share with friends. Max 700 chars"
+        class="input text-center"
+        required
+      />
+    </div>
+
+    <section class="share-button-container">
+      <app-button
+        type="submit"
+        backgroundColor="white"
+        textColor="var(--maincolor)"
+        >Share</app-button
+      >
+    </section>
+  </form>
+  <section>
+    <div *ngFor="let message of myMessages">
+      <app-message-card [message]="message"></app-message-card>
+    </div>
+  </section>
+</section>

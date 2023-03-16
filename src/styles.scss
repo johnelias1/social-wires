@@ -1,1 +1,136 @@
-/* You can add global styles to this file, and also import other style files */
+#loading {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  .main-color {
+    background-color: var(--maincolor);
+  }
+  
+  /*
+    BOOTSTRAP
+  */
+  /*!
+   * Start Bootstrap - SB Admin 2 v4.0.7 (https://startbootstrap.com/template-overviews/sb-admin-2)
+   * Copyright 2013-2019 Start Bootstrap
+   * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/blob/master/LICENSE)
+   */
+  
+  /*!
+   * Bootstrap v4.3.1 (https://getbootstrap.com/)
+   * Copyright 2011-2019 The Bootstrap Authors
+   * Copyright 2011-2019 Twitter, Inc.
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   */
+  :root {
+    --maincolor: #16202A;
+    --maincolor-darker: #2d273f;
+    --blue: #4e73df;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #e74a3b;
+    --orange: #fd7e14;
+    --yellow: #FBFD73;
+    --green: #1cc88a;
+    --teal: #20c9a6;
+    --cyan: #36b9cc;
+    --white: #fff;
+    --gray: #858796;
+    --gray-dark: var(--dark);
+    --primary: #4e73df;
+    --secondary: #858796;
+    --success: #1cc88a;
+    --info: #77d0d3;
+    --info-bright: #8dc6c8;
+    --info-darker: #5dc3c7;
+    --info-border: var(--info-darker);
+    --info-hover: var(--info-darker);
+    --warning: #f6c23e;
+    --danger: #e63946;
+    --danger-darker: rgb(216, 32, 16);
+    --light: #f8f9fc;
+    --dark: #5a5c69;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: 'Nunito', -apple-system, BlinkMacSystemFont,
+      'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+      'Liberation Mono', 'Courier New', monospace;
+    --mainfont: 'Open Sans', sans-serif;
+  }
+  
+  
+  
+  
+  body {
+    margin: 0;
+    font-family: var(--mainfont);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #858796;
+    text-align: left;
+    background-color: var(--maincolor);
+    box-sizing: border-box;
+  }
+  
+  .text-yellow {
+    color: var(--yellow);
+  }
+  
+  .text-blue {
+    color: var(--maincolor);
+  }
+
+  .input-container {
+    width: 100%;
+  }
+  
+  .input-container label {
+    color: var(--yellow);
+    font-size: 14px;
+  }
+  
+  .input{
+    display: block;
+    background-color: var(--maincolor);
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    color: white;
+    width: calc(100% - 25px);
+    margin-bottom: 10px;
+    margin-top: 3px;
+  }
+  
+  .input::placeholder{
+    color: #9c9898;
+    font-size: 0.8rem;
+  }
+  
+  .input:focus{
+    outline: 0;
+    border: 1px solid darkgray;
+  }
+  
+  .invalid{
+    border: 1px solid var(--danger) !important;
+  }
+  
+  .invalid-feed{
+    color: var(--danger);
+    text-align: center;
+  }
+  
