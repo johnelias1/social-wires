@@ -77,17 +77,19 @@ export class HomeComponent implements OnInit {
 
     if (this.isMyMessagesView) {
       params.createdBy = this.userData.id;
-      this.messagesService.getAllMessagesMe().subscribe((dbMessages: any) => {
-        dbMessages.map((element: any) => {
-          this.messages.push({
-            title: element.title,
-            text: element.text,
-            user: {
-              createdAt: element.updatedAt,
-            },
+      this.messagesService
+        .getFilterMessages(params)
+        .subscribe((dbMessages: any) => {
+          dbMessages.map((element: any) => {
+            this.messages.push({
+              title: element.title,
+              text: element.text,
+              user: {
+                createdAt: element.updatedAt,
+              },
+            });
           });
         });
-      });
       return;
     }
 

@@ -40,13 +40,13 @@ export class MessagesService {
   }
 
   getFilterMessages(findMessage: any) {
-    return this.http.get(`${this.serviceUrl}/messages/find`, findMessage);
+    return this.http.get(`${this.serviceUrl}/messages/find/${findMessage}`);
   }
 
   createComment(id: number, comment: string) {
     return this.http.patch(
       `${this.serviceUrl}/messages/comment/${id}`,
-      {comment},
+      { comment },
       this.httpOptions
     );
   }
