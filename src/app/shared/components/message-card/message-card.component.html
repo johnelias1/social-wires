@@ -52,7 +52,7 @@
 <div>
   <img
     class="add"
-    *ngIf="message.user.id == userService.currentUserValue.id"
+    *ngIf="message.user.id !== userService.currentUserValue.id"
     src="/assets/icons/Component4.png"
     alt="icono agregar"
     (click)="add()"

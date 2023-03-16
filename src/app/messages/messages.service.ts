@@ -43,10 +43,10 @@ export class MessagesService {
     return this.http.get(`${this.serviceUrl}/messages/find`, findMessage);
   }
 
-  createComment(body: any) {
+  createComment(id: number, comment: string) {
     return this.http.patch(
-      `${this.serviceUrl}/messages/comment/${body.id}`,
-      body,
+      `${this.serviceUrl}/messages/comment/${id}`,
+      {comment},
       this.httpOptions
     );
   }

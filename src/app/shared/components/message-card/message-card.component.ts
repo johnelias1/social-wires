@@ -39,15 +39,12 @@ export class MessageCardComponent {
   }
 
   create(form: FormGroup) {
-    console.log(this.message);
     if (!form.valid) return;
-    const body = {
-      id: this.message.id,
-      comment: this.form.get('text')?.value,
-    };
-    console.log(body);
-    this.messagesService.createComment(body).subscribe(() => {
-      this.messagesService.listMessages().subscribe();
-    });
+    this.messagesService
+      .createComment(this.message.id, this.form.get('text')?.value)
+      .subscribe(() => {
+        this.comments.next(false);
+        this.messagesService.listMessages().subscribe();
+      });
   }
 }
