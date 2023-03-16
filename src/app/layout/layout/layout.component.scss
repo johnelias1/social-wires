@@ -1,0 +1,58 @@
+.content {
+  max-width: 90%;
+  margin: 0 auto;
+
+  .text-white {
+    color: #fff;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: center;
+  }
+
+  .auto {
+    margin: auto;
+  }
+
+  .with-50 {
+    max-width: 50%;
+  }
+
+  .with-70 {
+    max-width: 70%;
+  }
+
+  .sign {
+    color: black;
+    padding: 10px 30px 10px 30px;
+    background-color: yellow;
+    border: 1px solid;
+    border-radius: 10px;
+
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .logn {
+    color: yellow;
+    padding: 10px 30px 10px 30px;
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 10px;
+
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .ellipse {
+    background: yellow;
+    border-radius: 50%;
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    left: 65%;
+    top: 0%;
+    z-index: -1;
+  }
+}
