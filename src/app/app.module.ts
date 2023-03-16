@@ -10,9 +10,10 @@ import { HomeComponent } from './core/pages/home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { UsersService } from './users/users.service';
 import { HeaderInterceptor } from './shared/interceptor/authorization.interceptor';
+import { LayoutComponent } from './layout/layout/layout.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, LayoutComponent],
   imports: [
     SharedModule,
     FormsModule,
@@ -32,5 +33,8 @@ import { HeaderInterceptor } from './shared/interceptor/authorization.intercepto
     },
   ],
   bootstrap: [AppComponent],
+  exports: [
+    LayoutComponent
+  ],
 })
 export class AppModule {}
