@@ -25,6 +25,12 @@
         class="input text-center"
         required
       />
+      <p *ngIf="this.form.get('text')?.hasError('required')" class="">
+        Text is required*
+      </p>
+      <p *ngIf="this.form.get('text')?.hasError('pattern')" class="">
+        Avoid writing with signs such as /*-+¡"%&"
+      </p>
     </div>
 
     <section class="share-button-container">

@@ -1,9 +1,10 @@
-import { User } from "src/app/shared/interfaces/user";
+import { User } from 'src/app/shared/interfaces/user';
 
 export interface Message {
-  _id: string;
+  id: string;
   title: string;
-  message: object;
+  text: object;
   createdBy: User;
   createdAt: string;
 }
+

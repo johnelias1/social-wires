@@ -5,6 +5,7 @@ import { User } from '../shared/interfaces/user';
 import { environment } from 'src/environments/environment';
 import { MyStorage as CacheStorage } from '../shared/storage/src/lib/MyStorage.model';
 import jwt_decode from 'jwt-decode';
+import { Router } from '@angular/router';
 
 interface IsLoggedIn {
   user: User;
@@ -18,7 +19,7 @@ export class UsersService {
   private httpOptions;
   serviceUrl: string;
   private currentUserSubject: BehaviorSubject<User>;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.currentUserSubject = new BehaviorSubject<User>(this.userData);
     this.serviceUrl = environment.apiSocialWires;
     this.httpOptions = {
@@ -90,5 +91,6 @@ export class UsersService {
   logout() {
     CacheStorage.clear();
     this.currentUserSubject.next({ id: '', nickname: '' });
+    this.router.navigate(['/users/auth/signin']);
   }
 }

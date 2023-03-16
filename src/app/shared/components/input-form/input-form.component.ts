@@ -47,7 +47,6 @@ export class InputFormComponent implements OnInit, ControlValueAccessor {
   }
 
   onInput(value: any) {
-    console.log(value);
     this.value = value;
     this.onTouch();
     this.onChange(this.value);
@@ -55,7 +54,6 @@ export class InputFormComponent implements OnInit, ControlValueAccessor {
   }
 
   onChangeInput(value: any) {
-    console.log(value);
     this.onChangeValue.emit(value);
   }
 

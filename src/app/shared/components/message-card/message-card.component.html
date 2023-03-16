@@ -7,7 +7,54 @@
   </p>
 
   <div class="message-card-bottom">
-    <span class="message-date"> {{ message.user.createdAt | date: 'HH:mm a dd/MM/yyyy' }} </span>
-    <span class="message-created-by"> {{ message.user.username }} </span>
+    <span class="message-date">
+      {{ message?.user?.createdAt | date : "HH:mm a dd/MM/yyyy" }}
+    </span>
+    <span class="message-created-by"> {{ message?.user?.username }} </span>
   </div>
+</div>
+<div class="message-card" *ngFor="let item of message.comments">
+  <p class="message-description">
+    {{ item }}
+  </p>
+</div>
+<div class="message-card" *ngIf="comments.value">
+  <form
+    class="createMessageForm"
+    [formGroup]="form"
+    (ngSubmit)="create(form)"
+    novalidate
+  >
+    <div class="">
+      <label for="">Comments</label>
+      <input
+        type="textarea"
+        formControlName="text"
+        placeholder="Create message for share with friends. Max 700 chars"
+        class="input text-center"
+        required
+      />
+      <p *ngIf="this.form.get('text')?.hasError('required')" class="">
+        Text is required*
+      </p>
+      <p *ngIf="this.form.get('text')?.hasError('pattern')" class="">
+        Avoid writing with signs such as /*-+¡"%&"
+      </p>
+    </div>
+    <app-button
+      type="submit"
+      backgroundColor="white"
+      textColor="var(--maincolor)"
+      >Send</app-button
+    >
+  </form>
+</div>
+<div>
+  <img
+    class="add"
+    *ngIf="message.user.id == userService.currentUserValue.id"
+    src="/assets/icons/Component4.png"
+    alt="icono agregar"
+    (click)="add()"
+  />
 </div>

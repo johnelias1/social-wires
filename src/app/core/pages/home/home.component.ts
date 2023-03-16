@@ -16,7 +16,7 @@ type RequestParams = {
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public messages: Message[] = [];
+  public messages: any = [];
 
   public isMyMessagesView: boolean = false;
   private date: string = '';
@@ -39,26 +39,61 @@ export class HomeComponent implements OnInit {
     this.isMyMessagesView = this.router.url.includes('myMessages');
     const params: RequestParams = {};
 
-    if (this.isMyMessagesView) {
-      params.createdBy = this.userData.id;
-      this.messagesService
-        .getMessagesId(params.createdBy || '')
-        .subscribe((dbMessages) => {
-          this.messages = dbMessages as Message[];
-        });
-    }
-
     if (this.date) {
       params.date = this.date;
+      this.messagesService
+        .getFilterMessages(params)
+        .subscribe((dbMessages: any) => {
+          dbMessages.map((element: any) => {
+            this.messages.push({
+              title: element.title,
+              text: element.text,
+              user: {
+                createdAt: element.updatedAt,
+              },
+            });
+          });
+        });
+      return;
     }
 
     if (this.search) {
       params.search = this.search;
+      this.messagesService
+        .getFilterMessages(params)
+        .subscribe((dbMessages: any) => {
+          dbMessages.map((element: any) => {
+            this.messages.push({
+              title: element.title,
+              text: element.text,
+              user: {
+                createdAt: element.updatedAt,
+              },
+            });
+          });
+        });
+      return;
+    }
+
+    if (this.isMyMessagesView) {
+      params.createdBy = this.userData.id;
+      this.messagesService.getAllMessagesMe().subscribe((dbMessages: any) => {
+        dbMessages.map((element: any) => {
+          this.messages.push({
+            title: element.title,
+            text: element.text,
+            user: {
+              createdAt: element.updatedAt,
+            },
+          });
+        });
+      });
+      return;
     }
 
     if (!this.isMyMessagesView) {
       this.messagesService.listMessages().subscribe((dbMessages) => {
-        this.messages = dbMessages as Message[];
+        this.messages = dbMessages;
       });
     }
   }

@@ -28,22 +28,25 @@ export class MessagesService {
   }
 
   listMessages() {
-    return this.http.get(
-      `${this.serviceUrl}/messages`,
-      this.httpOptions
-    );
+    return this.http.get(`${this.serviceUrl}/messages`, this.httpOptions);
   }
 
   getMostRecentMessages() {
-    return this.http.get(
-      `${this.serviceUrl}/messages/me`,
-      this.httpOptions
-    );
+    return this.http.get(`${this.serviceUrl}/messages/me`, this.httpOptions);
   }
 
-  getMessagesId(id:string) {
-    return this.http.get(
-      `${this.serviceUrl}/messages/me/${id}`,
+  getAllMessagesMe() {
+    return this.http.get(`${this.serviceUrl}/messages/me`, this.httpOptions);
+  }
+
+  getFilterMessages(findMessage: any) {
+    return this.http.get(`${this.serviceUrl}/messages/find`, findMessage);
+  }
+
+  createComment(body: any) {
+    return this.http.patch(
+      `${this.serviceUrl}/messages/comment/${body.id}`,
+      body,
       this.httpOptions
     );
   }
